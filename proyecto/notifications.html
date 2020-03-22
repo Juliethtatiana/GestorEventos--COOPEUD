@@ -43,32 +43,51 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
+          <li class="nav-item active  ">
             <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <i class="material-icons">home</i>
+              <p>Inicio</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
+          <li class="nav-item">
+                  <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registar</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="nav-link"href="./asociado.html">Registar asociado</a></li>
+                    <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+                  </ul>
+
           </li>
+          <li class="nav-item">
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Inscribir a eventos</button>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="./insc_evento_asociado.html">Inscribir asociado</a></li>
+              <li><a class="nav-link" href="#">Inscribir familiar</a></li>
+            </ul>
+
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Eventos</button>
+      <ul class="dropdown-menu">
+        <li><a class="nav-link"href="#">Agregar evento</a></li>
+        <li><a class="nav-link" href="./cerrar_evento.html">Cerrar evento</a></li>
+      </ul>
+
+</li>
+    
+    <li class="nav-item ">
+      <a class="nav-link" href="./cancelar_insc.html">
+        <i class="material-icons">cancel</i>
+        <p>Cancelar Inscripciones</p>
+      </a>
+    </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="./table.html">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Consultar inscripciones</p>
             </a>
           </li>
-          <li class="nav-item active ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-        </ul>
-      </div>
+         
+        </ul>      </div>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
@@ -253,41 +272,7 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </div>
   <div class="fixed-plugin">

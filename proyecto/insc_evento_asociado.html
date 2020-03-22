@@ -43,33 +43,50 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
+          <li class="nav-item active  ">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">home</i>
               <p>Inicio</p>
             </a>
           </li>
-          <li class="nav-item active ">
-              <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registrar</button>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link"href="./user.html">Registrar asociado</a></li>
-                <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
-              </ul>
+          <li class="nav-item">
+                  <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registar</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="nav-link"href="./asociado.html">Registar asociado</a></li>
+                    <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+                  </ul>
+
           </li>
+          <li class="nav-item">
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Inscribir a eventos</button>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="./insc_evento_asociado.html">Inscribir asociado</a></li>
+              <li><a class="nav-link" href="#">Inscribir familiar</a></li>
+            </ul>
+
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Eventos</button>
+      <ul class="dropdown-menu">
+        <li><a class="nav-link"href="#">Agregar evento</a></li>
+        <li><a class="nav-link" href="./cerrar_evento.html">Cerrar evento</a></li>
+      </ul>
+
+</li>
+    
+    <li class="nav-item ">
+      <a class="nav-link" href="./cancelar_insc.html">
+        <i class="material-icons">cancel</i>
+        <p>Cancelar Inscripciones</p>
+      </a>
+    </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="./table.html">
               <i class="material-icons">content_paste</i>
-              <p>Consultar Inscripciones</p>
+              <p>Consultar inscripciones</p>
             </a>
           </li>
-      
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          
+         
         </ul>
       </div>
     </div>
@@ -132,79 +149,40 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary ">
-                  <h4 class="card-title">Registrar Asociado</h4>
-                  <p class="card-category">Completa el formulario</p>
+                  <h4 class="card-title">Inscribir Asociado</h4>
+                  <p class="card-category">La ID del evento puede ser encontrada junto con la información del mismo</p>
                 </div>
                 <div class="card-body">
                   <form>
                     
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <select class="form-control" >
-                              <option value="default">Tipo de documento</option>
-                            <option value="1">CC</option>
-                            <option value="2">TI</option>
-                            <option value="3">Pasaporte</option>
-                            <option value="4">Cedula de extranjeria</option>
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Numero de documento</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Primer Nombre</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Segundo Nombre</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Primer Apellido</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Segundo Apellido</label>
-                              <input type="text" class="form-control">
+                                <label class="bmd-label-floating">Código de empleado</label>
+                                <input type="text" class="form-control">
                             </div>
-                          </div>
                         </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fecha nacimiento</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
                     </div>
-                   
-                    <button type="submit" class="btn pull-right bg-primary">Registrar</button>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">ID Evento</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>                      
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <select class="form-control" >
+                            <option value="default">Método de pago</option>
+                            <option value="1">Nomina</option>
+                            <option value="2">Cheque</option>                            
+                          </select>
+                        </div>
+                      </div>
+                    </div>                      
+                    <button type="submit" class="btn pull-right bg-primary">Inscribir</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
