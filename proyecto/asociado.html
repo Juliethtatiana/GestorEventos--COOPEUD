@@ -153,12 +153,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">Completa el formulario</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="http://localhost:8090/identificador" method="POST">
                     
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select class="form-control" >
+                          <select class="form-control" name="typeID">
                               <option value="default">Tipo de documento</option>
                             <option value="1">CC</option>
                             <option value="2">TI</option>
@@ -170,7 +170,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Numero de documento</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="docNum">
                         </div>
                       </div>
                     </div>
@@ -178,25 +178,25 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Primer Nombre</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="stName">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Segundo Nombre</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="ndName">
                         </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group">
                             <label class="bmd-label-floating">Primer Apellido</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="stLast">
                           </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                               <label class="bmd-label-floating">Segundo Apellido</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="ndLast">
                             </div>
                           </div>
                         </div>
@@ -204,19 +204,19 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="phNum">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha nacimiento</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="brnDate">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="postCode">
                         </div>
                       </div>
                     </div>
