@@ -8,7 +8,6 @@
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
-      
         event.preventDefault();
         var check = true;
         for(var i=0; i<input.length; i++) {
@@ -18,7 +17,7 @@
             }
         }
         if(check==true){
-            location.href = "./dashboard.html";
+          //  location.href = "./dashboard.html";
             console.log("nwoinweonoineoi");
         }
        

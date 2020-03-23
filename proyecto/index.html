@@ -32,11 +32,10 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
+				<span class="login100-form-title p-b-51">
 						Login
 					</span>
-
+				<form  action="http://localhost:8090/user" method="POST" id="form"class="login100-form validate-form flex-sb flex-w">
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
@@ -45,7 +44,7 @@
 					
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password"  name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -64,8 +63,8 @@
 						</div>
 					</div>
 
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn"  href="./dashboard.html" >
+					<div class="container-login100-form-btn ">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>
@@ -75,9 +74,20 @@
 		</div>
 	</div>
 	
-
-	<div id="dropDownSelect1"></div>
 	
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script> 
+ 
+    <script> 
+        // wait for the DOM to be loaded 
+        $(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('#form').ajaxForm(function() { 
+                alert("Thank you for your comment!"); 
+            }); 
+        }); 
+    </script> 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -93,7 +103,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	
 
 </body>
 </html>

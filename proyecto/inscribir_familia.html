@@ -160,19 +160,19 @@ The above copyright notice and this permission notice shall be included in all c
                                     <p class="card-category">Completa el formulario</p>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="http://localhost:8090/inscribirFamiliar" method="POST">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">ID Empleado</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="idEmpleado">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="evento">
                                                         <option value="default">Seleccione el evento</option>
-                                                        <option value="1">Evento 1</option>
+                                                        <option value="evento1">Evento 1</option>
                                                         <option value="2">Evento 2</option>
                                                         <option value="3">Evento 3</option>
                                                         <option value="4">Evento 4</option>
@@ -392,8 +392,9 @@ The above copyright notice and this permission notice shall be included in all c
                                                 </div>
                                             </div>
                                         </div>-->
+                                        <button type="submit" class="btn pull-right bg-primary">Registrar</button>
                                     </form>
-                                    <button type="submit" class="btn pull-right bg-primary">Registrar</button>
+                                   
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
