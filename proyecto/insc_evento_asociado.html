@@ -153,13 +153,13 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">La ID del evento puede ser encontrada junto con la información del mismo</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="http://localhost:8090/insc_evento_asociado" method="post">
                     
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Código de empleado</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="employeCode" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -167,14 +167,14 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">ID Evento</label>
-                          <input type="text" class="form-control">
+                          <input type="text" name="eventID"class="form-control">
                         </div>
                       </div>
                     </div>                      
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <select class="form-control" >
+                          <select class="form-control" name="payMeth" >
                             <option value="default">Método de pago</option>
                             <option value="1">Nomina</option>
                             <option value="2">Cheque</option>                            
