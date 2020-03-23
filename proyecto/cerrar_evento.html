@@ -22,7 +22,8 @@ The above copyright notice and this permission notice shall be included in all c
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
@@ -39,7 +40,7 @@ The above copyright notice and this permission notice shall be included in all c
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-         Gestor de eventos
+          Gestor de eventos
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -50,11 +51,12 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
           <li class="nav-item active ">
-              <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registrar</button>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link"href="./user.html">Registrar asociado</a></li>
-                <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
-              </ul>
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button"
+              data-toggle="dropdown">Registrar</button>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="./user.html">Registrar asociado</a></li>
+              <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+            </ul>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
@@ -62,14 +64,14 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Consultar Inscripciones</p>
             </a>
           </li>
-      
+
           <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
           </li>
-          
+
         </ul>
       </div>
     </div>
@@ -80,19 +82,21 @@ The above copyright notice and this permission notice shall be included in all c
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;">Gestion eventos</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-           
-             
+
+
             <ul class="navbar-nav">
-            
+
               <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">
@@ -108,7 +112,8 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     Account
@@ -136,93 +141,34 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">Completa el formulario</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="http://localhost:8090/cerrarEvento" method="POST">
                     <div class="row">
-                      <!--
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <select class="form-control" >
-                              <option value="default">Tipo de documento</option>
-                            <option value="1">CC</option>
-                            <option value="2">TI</option>
-                            <option value="3">Pasaporte</option>
-                            <option value="4">Cedula de extranjeria</option>
-                            </select>
-                        </div>
-                      </div>-->
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">ID Evento</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="idEvento">
                         </div>
                       </div>
                     </div>
-                    <!--
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Primer Nombre</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Segundo Nombre</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Primer Apellido</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <label class="bmd-label-floating">Segundo Apellido</label>
-                              <input type="text" class="form-control">
-                            </div>
-                          </div>
-                        </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fecha nacimiento</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>-->
-                    </div>
-                  </form>  
                     <div class="container-fluid">
-                          <button type="submit" class="btn pull-right bg-primary">Cancelar</button>
-                          <button type="submit" class="btn pull-right bg-primary">Aceptar</button>
+                      <button type="submit" class="btn pull-right bg-primary">Cancelar</button>
+                      <button type="submit" class="btn pull-right bg-primary">Aceptar</button>
                     </div>
-                    <div class="clearfix"></div>
-                  
+                  </form>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-                          </div>
+          </div>
+          <div class="col-md-4">
           </div>
         </div>
       </div>
-    
     </div>
+
   </div>
-    <!--   Core JS Files   -->
+  </div>
+  <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
@@ -266,8 +212,8 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $(document).ready(function () {
+      $().ready(function () {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -287,7 +233,7 @@ The above copyright notice and this permission notice shall be included in all c
 
         }
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
@@ -298,7 +244,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .active-color span').click(function() {
+        $('.fixed-plugin .active-color span').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).siblings().removeClass('active');
@@ -319,7 +265,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .background-color .badge').click(function() {
+        $('.fixed-plugin .background-color .badge').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -330,7 +276,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
@@ -340,7 +286,7 @@ The above copyright notice and this permission notice shall be included in all c
           var new_image = $(this).find("img").attr('src');
 
           if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.fadeOut('fast', function () {
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $sidebar_img_container.fadeIn('fast');
             });
@@ -349,7 +295,7 @@ The above copyright notice and this permission notice shall be included in all c
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
             var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-            $full_page_background.fadeOut('fast', function() {
+            $full_page_background.fadeOut('fast', function () {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
               $full_page_background.fadeIn('fast');
             });
@@ -368,7 +314,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.switch-sidebar-image input').change(function() {
+        $('.switch-sidebar-image input').change(function () {
           $full_page_background = $('.full-page-background');
 
           $input = $(this);
@@ -400,7 +346,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.switch-sidebar-mini input').change(function() {
+        $('.switch-sidebar-mini input').change(function () {
           $body = $('body');
 
           $input = $(this);
@@ -415,7 +361,7 @@ The above copyright notice and this permission notice shall be included in all c
 
             $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').addClass('sidebar-mini');
 
               md.misc.sidebar_mini_active = true;
@@ -423,12 +369,12 @@ The above copyright notice and this permission notice shall be included in all c
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
 
