@@ -158,16 +158,20 @@ The above copyright notice and this permission notice shall be included in all c
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label class="bmd-label-floating">Código de empleado</label>
-                                <input type="text" name="employeCode" class="form-control">
+                                <select class="form-control" id="IdAsociado" >
+                                  <option value="default">Código de empleado</option>
+                                                          
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">ID Evento</label>
-                          <input type="text" name="eventID"class="form-control">
+                          <select class="form-control" id="IdEvento" >
+                            <option value="default">ID evento</option>
+                                                       
+                          </select>
                         </div>
                       </div>
                     </div>                      
@@ -240,8 +244,55 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
+   
     $(document).ready(function() {
-      $().ready(function() {
+      
+        $.ajax({
+        url: 'http://localhost:8090/consultarIDEvento',
+        method:'POST',
+
+        success: function(data) {
+          var select= $('#IdEvento')
+          var htmlOptions = [];
+          console.log('hi');
+        if( data.length ){
+              for( item in data ) {
+                console.log(data[item].n_nomevento);
+                  html = '<option value="' + data[item].k_evento + '">' + data[item].n_nomevento + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+    $.ajax({
+        url: 'http://localhost:8090/consultarIDAsociado',
+        method:'POST',
+
+        success: function(data) {
+          var select= $('#IdAsociado')
+          var htmlOptions = [];
+          
+        if( data.length ){
+              for( item in data ) {
+                console.log(data[item].k_numeroa);
+                  html = '<option value="' + data[item].k_numeroa + '">' + data[item].k_numeroa + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -406,9 +457,11 @@ The above copyright notice and this permission notice shall be included in all c
             clearInterval(simulateWindowResize);
           }, 1000);
 
+
         });
       });
-    });
+   
+    
   </script>
 </body>
 
