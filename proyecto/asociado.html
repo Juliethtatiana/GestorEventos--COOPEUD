@@ -153,12 +153,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">Completa el formulario</p>
                 </div>
                 <div class="card-body">
-                  <form action="http://localhost:8090/asociado" method="POST">
+                  <form id="formAsociado">
                     
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <select class="form-control" name="typeID">
+                          <select class="form-control" id="typeID">
                               <option value="default">Tipo de documento</option>
                             <option value="CC">CC</option>
                             <option value="TI">TI</option>
@@ -170,7 +170,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Numero de documento</label>
-                          <input type="text" class="form-control" name="docNum">
+                          <input type="text" class="form-control" id="docNum">
                         </div>
                       </div>
                     </div>
@@ -178,19 +178,19 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Primer Nombre</label>
-                          <input type="text" class="form-control" name="stName">
+                          <input type="text" class="form-control" id="stName">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Segundo Nombre</label>
-                          <input type="text" class="form-control" name="ndName">
+                          <input type="text" class="form-control" id="ndName">
                         </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group">
                             <label class="bmd-label-floating">Primer Apellido</label>
-                            <input type="text" class="form-control" name="stLast">
+                            <input type="text" class="form-control" id="stLast">
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -204,32 +204,33 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control" name="phNum">
+                          <input type="text" class="form-control" id="phNum">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha nacimiento</label>
-                          <input type="text" class="form-control" name="brnDate">
+                          <input type="text" class="form-control" id="brnDate">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha afiliacion</label>
-                          <input type="text" class="form-control" name="brnDate">
+                          <input type="text" class="form-control" id="afDate">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Valor sueldo</label>
-                          <input type="text" class="form-control" name="postCode">
+                          <input type="text" class="form-control" id="valIncome">
                         </div>
                       </div>
                     </div>
                    
-                    <button type="submit" class="btn pull-right bg-primary">Registrar</button>
-                    <div class="clearfix"></div>
+                   
                   </form>
+                  <button onclick="registrar()" class="btn pull-right bg-primary">Registrar</button>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
@@ -454,6 +455,33 @@ The above copyright notice and this permission notice shall be included in all c
         });
       });
     });
+    function registrar(){
+     
+     var data={
+         k_tipoa: $("#typeID :selected").val(), 
+         k_numeroa: $("#docNum").val(), 
+         n_nomuno:$("#stName").val(),
+         n_nomdos:$("#ndName").val(),
+         n_apeuno:$("#stLast").val(),
+         n_apedos:$("#ndLast").val(),
+         o_telefono: $("#phNum").val(),
+         f_nacimiento: $("#brnDate").val(),
+        f_afiliacion: $("#afDate").val(),
+          v_sueldo: $("#valIncome").val()
+     }
+     console.log(JSON.stringify(data));
+     $.ajax({
+         url: 'http://localhost:8090/asociado',
+         method:'POST',
+         data:data,
+         success: function(data) {
+          window.alert(data);
+         },
+         error: function( errorThrown) {
+             alert('error ' + JSON.stringify(errorThrown));
+         }
+     });
+    }
   </script>
 </body>
 
