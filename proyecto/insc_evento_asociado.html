@@ -153,12 +153,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">La ID del evento puede ser encontrada junto con la información del mismo</p>
                 </div>
                 <div class="card-body">
-                  <form action="http://localhost:8090/insc_evento_asociado" method="POST">
+                  <form id="form">
                     
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <select class="form-control" id="IdAsociado" >
+                                <select class="form-control" id="IdAsociado" name="k_numeroa" >
                                   <option value="default">Código de empleado</option>
                                                           
                                 </select>
@@ -168,7 +168,7 @@ The above copyright notice and this permission notice shall be included in all c
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <select class="form-control" id="IdEvento" >
+                          <select class="form-control" id="IdEvento" name="k_evento" >
                             <option value="default">ID evento</option>
                                                        
                           </select>
@@ -186,9 +186,10 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                       </div>
                     </div>                      
-                    <button type="submit" class="btn pull-right bg-primary">Inscribir</button>
-                    <div class="clearfix"></div>
+                    
+                   
                   </form>
+                  <button onclick="inscribir()" class="btn pull-right bg-primary">Inscribir</button>
                 </div>
               </div>
             </div>
@@ -460,7 +461,25 @@ The above copyright notice and this permission notice shall be included in all c
 
         });
       });
-   
+   function inscribir(){
+     
+    var data={
+        k_evento: $("#IdEvento :selected").val(), 
+        k_numeroa: $("#IdAsociado :selected").val(), 
+    }
+    console.log(JSON.stringify(data));
+    $.ajax({
+        url: 'http://localhost:8090/insc_evento_asociado',
+        method:'POST',
+        data:data,
+        success: function(data) {
+         console.log(data);
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+   }
     
   </script>
 </body>
