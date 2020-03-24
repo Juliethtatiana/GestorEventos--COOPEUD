@@ -160,241 +160,42 @@ The above copyright notice and this permission notice shall be included in all c
                                     <p class="card-category">Completa el formulario</p>
                                 </div>
                                 <div class="card-body">
-                                    <form action="http://localhost:8090/inscribirFamiliar" method="POST">
+                                    <form >
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="bmd-label-floating">ID Empleado</label>
-                                                    <input type="text" class="form-control" name="idEmpleado">
+                                                  <label class="bmd-label-floating">Id asociado</label>
+                                                  <select class="form-control" id="IdAsociado">
+                                                    <option value="default">ID asociado</option>
+                        
+                                                  </select>
                                                 </div>
-                                            </div>
+                                              </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <select class="form-control" name="evento">
-                                                        <option value="default">Seleccione el evento</option>
-                                                        <option value="evento1">Evento 1</option>
-                                                        <option value="2">Evento 2</option>
-                                                        <option value="3">Evento 3</option>
-                                                        <option value="4">Evento 4</option>
-                                                    </select>
+                                                  <label class="bmd-label-floating">Id Evento</label>
+                                                  <select class="form-control" id="IdEvento">
+                                                    <option value="default">ID evento</option>
+                        
+                                                  </select>
                                                 </div>
-                                            </div>
+                                              </div>
                                         </div>
                                         <br>
-                                        <p class="font-weight-bold">Seleccione los familiares a inscribir.</p>
-                                        <hr>
-
-
-                                        <div class="card card-cascade narrower">
-
-                                            <!--Card image-->
-                                            <div
-                                                class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-
-                                                <div>
-                                                    
-                                                </div>
-
-                                                <h3>Famliares</h3>
-
-                                                <div>
-                                                    <button type="button"
-                                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                                        <span class="fa fa-pencil"></span>
-                                                    </button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </div>
-
-                                            </div>
-                                            <!--/Card image-->
-
-                                            <div class="px-4">
-
-                                                <div class="table-wrapper">
-                                                    <!--Table-->
-                                                    <table class="table table-hover mb-0">
-
-                                                        <!--Table head-->
-                                                        <thead>
-                                                            <tr>
-                                                                
-                                                                <th>
-
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Primer Nombre
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Primer Apellido
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Edad
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Tipo ID
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Número ID
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                                <th class="th-lg">
-                                                                    <a>Parentesco
-                                                                        <i class="fa fa-sort"></i>
-                                                                    </a>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <!--Table head-->
-
-                                                        <!--Table body-->
-                                                        <tbody>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="checkbox1">
-                                                                    <label class="form-check-label" for="checkbox1"
-                                                                        class="label-table"></label>
-                                                                </th>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>60</td>
-                                                                <td>CC</td>
-                                                                <td>XXXXXXXXX</td>
-                                                                <td>Padre</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="checkbox2">
-                                                                    <label class="form-check-label" for="checkbox2"
-                                                                        class="label-table"></label>
-                                                                </th>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>17</td>
-                                                                <td>TI</td>
-                                                                <td>XXXXXXXXX</td>
-                                                                <td>Hijo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="checkbox3">
-                                                                    <label class="form-check-label" for="checkbox3"
-                                                                        class="label-table"></label>
-                                                                </th>
-                                                                <td>Larry</td>
-                                                                <td>Sánchez</td>
-                                                                <td>14</td>
-                                                                <td>TI</td>
-                                                                <td>XXXXXXXXX</td>
-                                                                <td>Sobrino</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="checkbox4">
-                                                                    <label class="form-check-label" for="checkbox4"
-                                                                        class="label-table"></label>
-                                                                </th>
-                                                                <td>Paula</td>
-                                                                <td>Topolski</td>
-                                                                <td>59</td>
-                                                                <td>CC</td>
-                                                                <td>XXXXXXXXX</td>
-                                                                <td>Madre</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="checkbox5">
-                                                                    <label class="form-check-label" for="checkbox5"
-                                                                        class="label-table"></label>
-                                                                </th>
-                                                                <td>Carol</td>
-                                                                <td>Pérez</td>
-                                                                <td>18</td>
-                                                                <td>CC</td>
-                                                                <td>XXXXXXXXX</td>
-                                                                <td>Hija</td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <!--Table body-->
-                                                    </table>
-                                                    <!--Table-->
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Table with panel -->
-
-                                        <!--
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="bmd-label-floating">Primer Nombre</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Segundo Nombre</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Primer Apellido</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Segundo Apellido</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
+                                                    <label class="bmd-label-floating">Id familiar</label>
+                                                    <select class="form-control" id="IdFamiliar">
+                                                      <option value="default">ID familiar</option>
+                          
+                                                    </select>
+                                                  </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Telefono</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Fecha nacimiento</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Postal Code</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                        <button type="submit" class="btn pull-right bg-primary">Registrar</button>
+                                      
                                     </form>
-                                   
+                                    <button onclick="inscribir()" class="btn pull-right bg-primary">Registrar</button>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -453,6 +254,81 @@ The above copyright notice and this permission notice shall be included in all c
     <script>
         $(document).ready(function () {
             $().ready(function () {
+                $.ajax({
+        url: 'http://localhost:8090/consultarIDAsociado',
+        method:'POST',
+
+        success: function(data) {
+          var select= $('#IdAsociado')
+          var htmlOptions = [];
+          htmlOptions[0]='<option value=" NULL ">Seleccione</option>'; 
+        if( data.length ){
+              for( item in data ) {
+                console.log(data[item].k_numeroa);
+                  html = '<option value="' + data[item].k_numeroa + '">' + data[item].k_numeroa + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+                $.ajax({
+          url: 'http://localhost:8090/consultarIDEvento',
+          method: 'POST',
+
+          success: function (data) {
+            var select = $('#IdEvento')
+            var htmlOptions = [];
+            htmlOptions[0]='<option value=" NULL ">Seleccione</option>'; 
+            console.log('hi');
+            if (data.length) {
+              for (item in data) {
+                console.log(data[item].n_nomevento);
+                html = '<option value="' + data[item].k_evento + '">' + data[item].n_nomevento + '</option>';
+                htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append(htmlOptions.join(''));
+            }
+          },
+          error: function (errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+          }
+        });
+        $("#IdAsociado").change(function() {
+            var data={
+         k_numeroa: $("#IdAsociado :selected").val(), 
+     }
+            $.ajax({
+        url: 'http://localhost:8090/consultarIDFamiliar',
+        method:'POST',
+        data:data,
+        success: function(data) {
+          var select= $('#IdFamiliar')
+          var htmlOptions = [];
+        if( data.length ){
+              for( item in data ) {
+                console.log(data[item].k_numerof);
+                  html = '<option value="' + data[item].k_tipof + '">' + data[item].k_numerof + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+        })
+       
                 $sidebar = $('.sidebar');
 
                 $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -620,6 +496,27 @@ The above copyright notice and this permission notice shall be included in all c
                 });
             });
         });
+        function inscribir(){
+     
+     var data={
+         k_evento: $("#IdEvento :selected").val(), 
+         k_numeroa: $("#IdAsociado :selected").val(), 
+         k_numerof: $("#IdFamiliar :selected").html(),
+         k_tipof: $("#IdFamiliar :selected").val(), 
+     }
+     console.log(JSON.stringify(data));
+     $.ajax({
+         url: 'http://localhost:8090/inscribirFamiliar',
+         method:'POST',
+         data:data,
+         success: function(data) {
+          alert(data);
+         },
+         error: function( errorThrown) {
+             alert('error ' + JSON.stringify(errorThrown));
+         }
+     });
+    }
     </script>
 </body>
 
