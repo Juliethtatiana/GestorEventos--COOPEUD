@@ -44,34 +44,50 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
+          <li class="nav-item active  ">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">home</i>
               <p>Inicio</p>
             </a>
           </li>
-          <li class="nav-item active ">
-            <button class="btn btn-primary dropdown-toggle nav-item" type="button"
-              data-toggle="dropdown">Registrar</button>
+          <li class="nav-item">
+                  <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registar</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="nav-link"href="./asociado.html">Registar asociado</a></li>
+                    <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+                  </ul>
+
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Inscribir a eventos</button>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="./user.html">Registrar asociado</a></li>
-              <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+              <li><a class="nav-link"href="./insc_evento_asociado.html">Inscribir asociado</a></li>
+              <li><a class="nav-link" href="./inscribir_familia.html">Inscribir familiar</a></li>
             </ul>
-          </li>
+
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Eventos</button>
+      <ul class="dropdown-menu">
+        <li><a class="nav-link"href="./registrar_evento.html">Agregar evento</a></li>
+        <li><a class="nav-link" href="./cerrar_evento.html">Cerrar evento</a></li>
+      </ul>
+
+</li>
+    
+    <li class="nav-item ">
+      <a class="nav-link" href="./cancelar_insc.html">
+        <i class="material-icons">cancel</i>
+        <p>Cancelar Inscripciones</p>
+      </a>
+    </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="./table.html">
               <i class="material-icons">content_paste</i>
-              <p>Consultar Inscripciones</p>
+              <p>Consultar inscripciones</p>
             </a>
           </li>
-
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-
+         
         </ul>
       </div>
     </div>
