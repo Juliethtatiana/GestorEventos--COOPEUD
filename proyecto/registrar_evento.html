@@ -24,12 +24,75 @@ The above copyright notice and this permission notice shall be included in all c
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
+<style>
+  .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -157,39 +220,58 @@ The above copyright notice and this permission notice shall be included in all c
                   <p class="card-category">Completa el formulario</p>
                 </div>
                 <div class="card-body">
-                  <form action="http://localhost:8090/registrar_evento" method="POST">
+                  <form>
                     <div class="row">
-                      <div class="col-md-3">
-                        <label class="bmd-label-floating">Codigo del evento</label>
-                        <select class="form-control" name="codEvento">
-                          <option value = "default">
-                          <option value="1">Codigo del evento</option>
-                        </select>
-                      </div>
-
-                      <div class="col-md-3">
+                    
+                      <div class="col-md-9">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nombre del evento</label>
                           <br>
-                          <input type="text" class="form-control" name="nomEvento">
+                          <input type="text" class="form-control" id="nomEvento">
                         </div>
                       </div>
+                      <div class="col-md-3">
+                        <label class="switch">
+                          <input type="checkbox" id="copago">
+                          <span class="slider round"></span>
+                        </label>
+                        <label class="small">Copago</label>
+                      </div>
                     </div>
-
                     <div class="row">
-                      <div class="col-md-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Tipo</label>
+                              <select class="form-control" id="IdTipo" name="k_evento" >
+                                <option value="default">ID evento</option>
+                                                           
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Proveedor</label>
+                                <select class="form-control" id="IdProveedor">
+                                  <option value="default">ID evento</option>
+                                                             
+                                </select>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha de inicio</label>
                           <br>
-                          <input type="date" class="form-control" name="feInicio">
+                          <input type="date" class="form-control" id="feInicio">
                         </div>
                       </div>
 
-                      <div class="col-md-2">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha de fin</label>
                           <br>
-                          <input type="date" class="form-control" name="feFin">
+                          <input type="date" class="form-control" id="feFin">
                         </div>
                       </div>
 
@@ -197,7 +279,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha max. de inscripcion</label>
                           <br>
-                          <input type="date" class="form-control" name="feMInsc">
+                          <input type="date" class="form-control" id="feMInsc">
                         </div>
                       </div>
                       
@@ -205,56 +287,89 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha max. de cancelacion</label>
                           <br>
-                          <input type="date" class="form-control" name="fMCanc">
+                          <input type="date" class="form-control" id="fMCanc">
                         </div>
                       </div>
                     </div>
 
                     <div class = row>
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Lugar</label>
                           <br>
-                          <input type="text" class="form-control" name="lugar">
+                          <input type="text" class="form-control" id="lugar">
                         </div>
                       </div>
 
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Valor total</label>
                           <br>
-                          <input type="text" class="form-control" name="vTotal">
+                          <input type="text" class="form-control" id="vTotal">
                         </div>
                       </div>
 
-                      <div class="col-md-2">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating"># Max. participantes</label>
                           <br>
-                          <input type="text" class="form-control" name="maxPart">
+                          <input type="text" class="form-control" id="maxPart">
                         </div>
                       </div>
                     </div>
-
+                   
                     <div class = "row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Descripcion</label>
-                          <textarea class="form-control" rows="5" id="comment" name="desc"></textarea>
+                          <label class="bmd-label-floating">Descripción</label>
+                          <textarea class="form-control" rows="5" id="desc"></textarea>
                         </div>
                       </div>
 
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Observaciones</label>
-                          <textarea class="form-control" rows="5" id="comment" name="obser"></textarea>
+                          <textarea class="form-control" rows="5"  id="obser"></textarea>
                         </div>
                       </div>
                     </div>
-                  
-                    <button type="submit" class="btn pull-right bg-primary">Registrar</button>
-                    <div class="clearfix"></div>
+                    <label class="bmd-label-floating">Estos campos son para eventos con copago</label>    
+                    <div class="row">   
+                        
+                        <div class="col-md-3">
+                            <label class="bmd-label-floating">Forma de pago</label>
+                            <select class="form-control" id="FormaPago" disabled >
+                              <option value="Nomina">Nomina</option>
+                              <option value="Ventanilla">Ventanilla</option>                                                         
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Valor copago</label>
+                                <br>
+                                <input type="text" class="form-control" id="valCopago" disabled>
+                              </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label class="bmd-label-floating"># cuotas maximas</label>
+                              <br>
+                              <input type="text" class="form-control" id="q_cuotasmax" disabled>
+                            </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Porcentaje subsidio</label>
+                            <br>
+                            <input type="text" class="form-control" id="p_subsidio" disabled>
+                          </div>
+                  </div>
+                  </div>
+                   
+                   
                   </form>
+                  <button onclick="registrar()"class="btn pull-right bg-primary">Registrar</button>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
@@ -297,19 +412,82 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
   <script src="../assets/js/plugins/arrive.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
   <script src="../assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
+ 
   <script>
     $(document).ready(function() {
       $().ready(function() {
+        $("#FormaPago").prop("disabled",true);
+        $("#valCopago").prop("disabled",true);
+        $("#q_cuotasmax").prop("disabled",true);
+        $("#p_subsidio").prop("disabled",true);
+        $("#copago").prop("checked",false);
+        $.ajax({
+        url: 'http://localhost:8090/consultarTipoEvento',
+        method:'POST',
+
+        success: function(data) {
+          var select= $('#IdTipo')
+          var htmlOptions = [];
+          
+        if( data.length ){
+              for( item in data ) {
+                
+                  html = '<option value="' + data[item].k_tipo + '">' + data[item].n_nomtipo + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+    $.ajax({
+        url: 'http://localhost:8090/consultarProveedor',
+        method:'POST',
+
+        success: function(data) {
+          var select= $('#IdProveedor')
+          var htmlOptions = [];
+          
+        if( data.length ){
+              for( item in data ) {
+                console.log(data[item].k_numeroa);
+                  html = '<option value="' + data[item].k_proveedor + '">' + data[item].n_nomprov + '</option>';
+              htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append( htmlOptions.join('') );
+          }
+        },
+        error: function( errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+        }
+    });
+
+    $('#copago').click(function() {
+    if ($(this).is(':checked')) {
+      $("#FormaPago").prop("disabled",false);
+      $("#valCopago").prop("disabled",false);
+      $("#q_cuotasmax").prop("disabled",false);
+      $("#p_subsidio").prop("disabled",false);
+    }else{
+      $("#FormaPago").prop("disabled",true);
+      $("#valCopago").prop("disabled",true);
+      $("#q_cuotasmax").prop("disabled",true);
+      $("#p_subsidio").prop("disabled",true);
+    }
+  });
+
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -476,7 +654,43 @@ The above copyright notice and this permission notice shall be included in all c
 
         });
       });
+
     });
+    function registrar(){
+     
+     var data={
+         n_nomevento: $("#nomEvento").val(), 
+         k_tipo:$("#IdTipo :selected").val(),
+         k_proveedor:$("#IdProveedor :selected").val(),
+         o_descripcion:$("#desc").val(),
+         o_lugar:$("#lugar").val(),
+         f_inicio:$("#feInicio").val(),
+         f_fin:$("#feFin").val(),
+         f_maxinsc: $("#feMInsc").val(),
+         v_total: $("#vTotal").val(),
+        o_obs: $("#obser").val(),
+        q_maxparticipantes: $("#maxPart").val(),
+        f_maxcancel:$("#fMCanc").val(),
+        i_copago:$('#copago').is(":checked"),
+        i_pago:$("#FormaPago :selected").val(),
+        v_copago:$("#valCopago").val(),
+        q_cuotasmax:$("#q_cuotasmax").val(),
+        p_subsidio:  $("#p_subsidio").val()
+     
+     }
+     console.log(JSON.stringify(data));
+     $.ajax({
+         url: 'http://localhost:8090/registrar_evento',
+         method:'POST',
+         data:data,
+         success: function(data) {
+          window.alert(data);
+         },
+         error: function( errorThrown) {
+             alert('error ' + JSON.stringify(errorThrown));
+         }
+     });
+    }
   </script>
 </body>
 
