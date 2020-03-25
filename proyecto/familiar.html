@@ -180,7 +180,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Numero de documento</label>
-                          <input type="text" class="form-control" name="docNum">
+                          <input type="number" min="0" class="form-control" name="docNum">
                         </div>
                       </div>
                     </div>
@@ -188,25 +188,25 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Primer Nombre</label>
-                          <input type="text" class="form-control" name="stName">
+                          <input type="text" pattern="[A-Za-z]" title="Solo se admiten letras" class="form-control" name="stName">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Segundo Nombre</label>
-                          <input type="text" class="form-control" name="ndName">
+                          <input type="text" pattern="[A-Za-z]" title="Solo se admiten letras" class="form-control" name="ndName">
                         </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group">
                             <label class="bmd-label-floating">Primer Apellido</label>
-                            <input type="text" class="form-control" name="stLast">
+                            <input type="text" pattern="[A-Za-z]" title="Solo se admiten letras" class="form-control" name="stLast">
                           </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                               <label class="bmd-label-floating">Segundo Apellido</label>
-                              <input type="text" class="form-control" name="ndLast">
+                              <input type="text" pattern="[A-Za-z]" title="Solo se admiten letras" class="form-control" name="ndLast">
                             </div>
                           </div>
                         </div>
@@ -214,19 +214,19 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefono</label>
-                          <input type="text" class="form-control" name="phNum">
+                          <input type="number" min="0" class="form-control" name="phNum">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Parentesco</label>
-                          <input type="text" class="form-control" name="kin">
+                          <input type="text" pattern="[A-Za-z]" title="Solo se admiten letras" class="form-control" name="kin">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control" name="postCode">
+                          <input type="number" min="0" class="form-control" name="postCode">
                         </div>
                       </div>
                     </div>

@@ -263,7 +263,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha de inicio</label>
                           <br>
-                          <input type="date" class="form-control" id="feInicio">
+                          <input type="date" min="2020-03-25" class="form-control" id="feInicio">
                         </div>
                       </div>
 
@@ -271,7 +271,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha de fin</label>
                           <br>
-                          <input type="date" class="form-control" id="feFin">
+                          <input type="date" min="2020-03-25" class="form-control" id="feFin">
                         </div>
                       </div>
 
@@ -279,7 +279,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha max. de inscripcion</label>
                           <br>
-                          <input type="date" class="form-control" id="feMInsc">
+                          <input type="date" min="2020-03-25" class="form-control" id="feMInsc">
                         </div>
                       </div>
                       
@@ -287,7 +287,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha max. de cancelacion</label>
                           <br>
-                          <input type="date" class="form-control" id="fMCanc">
+                          <input type="date" min="2020-03-25"  class="form-control" id="fMCanc">
                         </div>
                       </div>
                     </div>
@@ -305,7 +305,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating">Valor total</label>
                           <br>
-                          <input type="text" class="form-control" id="vTotal">
+                          <input type="number" min="0" class="form-control" id="vTotal">
                         </div>
                       </div>
 
@@ -313,7 +313,7 @@ input:checked + .slider:before {
                         <div class="form-group">
                           <label class="bmd-label-floating"># Max. participantes</label>
                           <br>
-                          <input type="text" class="form-control" id="maxPart">
+                          <input type="number" min="0" class="form-control" id="maxPart">
                         </div>
                       </div>
                     </div>
@@ -347,21 +347,21 @@ input:checked + .slider:before {
                             <div class="form-group">
                                 <label class="bmd-label-floating">Valor copago</label>
                                 <br>
-                                <input type="text" class="form-control" id="valCopago" disabled>
+                                <input type="number" min="0" class="form-control" id="valCopago" disabled>
                               </div>
                       </div>
                       <div class="col-md-3">
                           <div class="form-group">
                               <label class="bmd-label-floating"># cuotas maximas</label>
                               <br>
-                              <input type="text" class="form-control" id="q_cuotasmax" disabled>
+                              <input type="number" min="0" class="form-control" id="q_cuotasmax" disabled>
                             </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label class="bmd-label-floating">Porcentaje subsidio</label>
                             <br>
-                            <input type="text" class="form-control" id="p_subsidio" disabled>
+                            <input type="number" min="0" class="form-control" id="p_subsidio" disabled>
                           </div>
                   </div>
                   </div>
