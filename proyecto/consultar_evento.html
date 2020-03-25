@@ -168,28 +168,10 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Consultar Evento</h4>
-                  <p class="card-category"> por favor seleccione el identificador del evento del que desea consultar las
-                    inscripciones</p>
+                
                 </div>
                 <div class="card-body">
-                  <form >
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Id Evento</label>
-                          <select class="form-control" id="IdEvento">
-                            <option value="default">ID evento</option>
-
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                  </form>
-                  <div class="container-fluid">
-                    <button onclick="consultar()" class="btn pull-right bg-primary">Consultar</button>
-
-                  </div>
+                  
 
                   <div class="table-responsive">
                     <table class="table" id="inscripciones">
@@ -285,6 +267,34 @@ The above copyright notice and this permission notice shall be included in all c
             alert('error ' + JSON.stringify(errorThrown));
           }
         });
+        $.ajax({
+        url: 'http://localhost:8090/consultarEventos',
+        method: 'POST',
+        success: function (obj) {
+
+          var tbody = document.getElementById('tbody');
+          var head=" <tr> <th>Id evento</th> <th>Nombre evento</th> <th>Tipo evento</th> <th>Descripción</th><th>Lugar</th><th>Fecha de inicio</th><th>Fecha de fin</th><th>Fecha de cierre</th><th>Fecha maxima de inscripcion</th><th>Valor total</th><th>Observaciones</th><th>Estado</th><th>Sobrecupo</th><th>Tiene inscripciones</th><th>Proveedor</th></tr>";
+          tbody.innerHTML += head;
+          for (var i = 0; i < obj.length; i++) {
+            var tr = "<tr>";
+            var date = new Date(obj[i].f_inicio);
+            var dateFin = new Date(obj[i].f_fin);
+            if(obj[i].f_cierre){
+            var dateCierre = new Date(obj[i].f_cierre);
+            }else{
+              var dateCierre="no existe"
+            }
+            var dateMaxinsc = new Date(obj[i].f_maxinsc);
+            tr += "<td>" + obj[i].k_evento.toString() + "</td><td>"+obj[i].n_nomevento.toString()+"</td><td>"+obj[i].n_nomtipo.toString()+"</td><td>"+obj[i].o_descripcion.toString()+"</td><td>"+obj[i].o_lugar.toString()+"</td><td>"+date.toDateString()+"</td><td>"+dateFin.toDateString()+"</td><td>"+dateCierre+"</td><td>"+dateMaxinsc.toDateString()+"</td><td>"+obj[i].v_total+"</td><td>"+obj[i].o_obs+"</td><td>"+obj[i].i_estado+"</td><td>"+obj[i].i_sobrecupo+"</td><td>"+obj[i].i_inscripcion+"</td><td>"+obj[i].k_proveedor+"</td></tr>";
+
+            
+            tbody.innerHTML += tr;
+          }
+        },
+        error: function (errorThrown) {
+          alert('error ' + JSON.stringify(errorThrown));
+        }
+      });
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -451,38 +461,9 @@ The above copyright notice and this permission notice shall be included in all c
 
         });
       });
+      
     });
-    function consultar() {
-
-      var data = {
-        k_evento: $("#IdEvento :selected").val(),
-
-      }
-      console.log(JSON.stringify(data));
-      $.ajax({
-        url: 'http://localhost:8090/consultarInscripciones',
-        method: 'POST',
-        data: data,
-        success: function (obj) {
-          var tbody = document.getElementById('tbody');
-          var head=" <tr> <th>Id inscripcion</th> <th>Fecha inscripcion</th> <th>Valor de inscripcion</th><th>Estado inscripcion</th><th>Valor de inscripcion</th></tr>";
-          tbody.innerHTML += head;
-          for (var i = 0; i < obj.length; i++) {
-            var tr = "<tr>";
-
-
-            /* Must not forget the $ sign */
-            tr += "<td>" + obj[i].k_inscripcion.toString() + "</td><td>"+obj[i].f_inscripcion.toString()+"</td><td>"+obj[i].v_valor.toString()+"</td><td>"+obj[i].i_estado.toString()+"</td><td>"+obj[i].k_evento.toString()+"</td><td>"+obj[i].k_tipoa.toString()+"</td><td>"+obj[i].i_asiste.toString()+"</td><td>"+obj[i].k_numeroa.toString()+"</td></tr>";
-
-            /* We add the table row to the table body */
-            tbody.innerHTML += tr;
-          }
-        },
-        error: function (errorThrown) {
-          alert('error ' + JSON.stringify(errorThrown));
-        }
-      });
-    }
+    
   </script>
 </body>
 
