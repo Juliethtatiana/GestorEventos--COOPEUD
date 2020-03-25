@@ -463,15 +463,17 @@ The above copyright notice and this permission notice shall be included in all c
         method: 'POST',
         data: data,
         success: function (obj) {
+          $("#tbody").empty();
           var tbody = document.getElementById('tbody');
-          var head=" <tr> <th>Id inscripcion</th> <th>Fecha inscripcion</th> <th>Valor de inscripcion</th><th>Estado inscripcion</th><th>Valor de inscripcion</th></tr>";
+          
+          var head=" <tr> <th>Id inscripcion</th> <th>Fecha inscripcion</th> <th>Valor de inscripcion</th><th>Estado inscripcion</th><th>Valor de inscripcion</th><th>ID Evento</th></tr>";
           tbody.innerHTML += head;
           for (var i = 0; i < obj.length; i++) {
             var tr = "<tr>";
-
+             var dateInsc= new Date(obj[i].f_inscripcion); 
 
             /* Must not forget the $ sign */
-            tr += "<td>" + obj[i].k_inscripcion.toString() + "</td><td>"+obj[i].f_inscripcion.toString()+"</td><td>"+obj[i].v_valor.toString()+"</td><td>"+obj[i].i_estado.toString()+"</td><td>"+obj[i].k_evento.toString()+"</td><td>"+obj[i].k_tipoa.toString()+"</td><td>"+obj[i].i_asiste.toString()+"</td><td>"+obj[i].k_numeroa.toString()+"</td></tr>";
+            tr += "<td>" + obj[i].k_inscripcion.toString() + "</td><td>"+dateInsc.toDateString()+"</td><td>"+obj[i].v_valor.toString()+"</td><td>"+obj[i].i_estado.toString()+"</td><td>"+obj[i].k_evento.toString()+"</td><td>"+obj[i].k_tipoa.toString()+"</td><td>"+obj[i].i_asiste.toString()+"</td><td>"+obj[i].k_numeroa.toString()+"</td></tr>";
 
             /* We add the table row to the table body */
             tbody.innerHTML += tr;

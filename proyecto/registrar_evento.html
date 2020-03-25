@@ -228,12 +228,19 @@ input:checked + .slider:before {
                   <form>
                     <div class="row">
                     
-                      <div class="col-md-9">
+                      <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nombre del evento</label>
                           <br>
                           <input type="text" class="form-control" id="nomEvento">
                         </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label class="switch">
+                          <input type="checkbox" id="asiste">
+                          <span class="slider round"></span>
+                        </label>
+                        <label class="small">Asiste</label>
                       </div>
                       <div class="col-md-3">
                         <label class="switch">
@@ -680,7 +687,8 @@ input:checked + .slider:before {
         i_pago:$("#FormaPago :selected").val(),
         v_copago:$("#valCopago").val(),
         q_cuotasmax:$("#q_cuotasmax").val(),
-        p_subsidio:  $("#p_subsidio").val()
+        p_subsidio:  $("#p_subsidio").val(),
+        
      
      }
      console.log(JSON.stringify(data));
