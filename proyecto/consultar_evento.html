@@ -18,11 +18,12 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Gestor de eventos COOPEUD
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
@@ -33,9 +34,13 @@ The above copyright notice and this permission notice shall be included in all c
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-         Gestor de eventos
+          Gestor de eventos
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -46,38 +51,41 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
           <li class="nav-item">
-                  <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Registar</button>
-                  <ul class="dropdown-menu">
-                    <li><a class="nav-link"href="./asociado.html">Registar asociado</a></li>
-                    <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
-                  </ul>
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button"
+              data-toggle="dropdown">Registar</button>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="./asociado.html">Registar asociado</a></li>
+              <li><a class="nav-link" href="./familiar.html">Registrar familiar</a></li>
+            </ul>
 
           </li>
           <li class="nav-item">
-            <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Inscribir a eventos</button>
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Inscribir a
+              eventos</button>
             <ul class="dropdown-menu">
-              <li><a class="nav-link"href="./insc_evento_asociado.html">Inscribir asociado</a></li>
+              <li><a class="nav-link" href="./insc_evento_asociado.html">Inscribir asociado</a></li>
               <li><a class="nav-link" href="./inscribir_familia.html">Inscribir familiar</a></li>
             </ul>
 
-    </li>
-    <li class="nav-item">
-      <button class="btn btn-primary dropdown-toggle nav-item" type="button" data-toggle="dropdown">Eventos</button>
-      <ul class="dropdown-menu">
-        <li><a class="nav-link"href="./registrar_evento.html">Agregar evento</a></li>
-        <li><a class="nav-link" href="./cerrar_evento.html">Cerrar evento</a></li>
-      </ul>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary dropdown-toggle nav-item" type="button"
+              data-toggle="dropdown">Eventos</button>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="./registrar_evento.html">Agregar evento</a></li>
+              <li><a class="nav-link" href="./cerrar_evento.html">Cerrar evento</a></li>
+            </ul>
 
-</li>
-    
-    <li class="nav-item ">
-      <a class="nav-link" href="./cancelar_insc.html">
-        <i class="material-icons">cancel</i>
-        <p>Cancelar Inscripciones</p>
-      </a>
-    </li>
+          </li>
+
           <li class="nav-item ">
-            <a class="nav-link" href="./table.html">
+            <a class="nav-link" href="./cancelar_insc.html">
+              <i class="material-icons">cancel</i>
+              <p>Cancelar Inscripciones</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
               <p>Consultar inscripciones</p>
             </a>
@@ -88,6 +96,7 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Consultar eventos</p>
             </a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -96,21 +105,45 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Inicio</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            
+
             <ul class="navbar-nav">
-             
-            
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     Account
@@ -131,96 +164,58 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
-                  </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Consultar Evento</h4>
+                  <p class="card-category"> por favor seleccione el identificador del evento del que desea consultar las
+                    inscripciones</p>
                 </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="javascript:;">Get More Space...</a>
+                <div class="card-body">
+                  <form >
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Id Evento</label>
+                          <select class="form-control" id="IdEvento">
+                            <option value="default">ID evento</option>
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+                  <div class="container-fluid">
+                    <button onclick="consultar()" class="btn pull-right bg-primary">Consultar</button>
+
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+
+                  <div class="table-responsive">
+                    <table class="table" id="inscripciones">
+                      <tbody id="tbody"></tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="dailySalesChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
           </div>
-         </div>
+        </div>
+      </footer>
+    </div>
   </div>
-  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -264,10 +259,32 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script src="../Server/node.js"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $(document).ready(function () {
+      $().ready(function () {
+        $.ajax({
+          url: 'http://localhost:8090/consultarIDEvento',
+          method: 'POST',
+
+          success: function (data) {
+            var select = $('#IdEvento')
+            var htmlOptions = [];
+            console.log('hi');
+            if (data.length) {
+              for (item in data) {
+                console.log(data[item].n_nomevento);
+                html = '<option value="' + data[item].k_evento + '">' + data[item].n_nomevento + '</option>';
+                htmlOptions[htmlOptions.length] = html;
+              }
+
+              // here you will empty the pre-existing data from you selectbox and will append the htmlOption created in the loop result
+              select.empty().append(htmlOptions.join(''));
+            }
+          },
+          error: function (errorThrown) {
+            alert('error ' + JSON.stringify(errorThrown));
+          }
+        });
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -287,7 +304,7 @@ The above copyright notice and this permission notice shall be included in all c
 
         }
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
@@ -298,7 +315,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .active-color span').click(function() {
+        $('.fixed-plugin .active-color span').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).siblings().removeClass('active');
@@ -319,7 +336,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .background-color .badge').click(function() {
+        $('.fixed-plugin .background-color .badge').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -330,7 +347,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
@@ -340,7 +357,7 @@ The above copyright notice and this permission notice shall be included in all c
           var new_image = $(this).find("img").attr('src');
 
           if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.fadeOut('fast', function () {
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $sidebar_img_container.fadeIn('fast');
             });
@@ -349,7 +366,7 @@ The above copyright notice and this permission notice shall be included in all c
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
             var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-            $full_page_background.fadeOut('fast', function() {
+            $full_page_background.fadeOut('fast', function () {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
               $full_page_background.fadeIn('fast');
             });
@@ -368,7 +385,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.switch-sidebar-image input').change(function() {
+        $('.switch-sidebar-image input').change(function () {
           $full_page_background = $('.full-page-background');
 
           $input = $(this);
@@ -400,7 +417,7 @@ The above copyright notice and this permission notice shall be included in all c
           }
         });
 
-        $('.switch-sidebar-mini input').change(function() {
+        $('.switch-sidebar-mini input').change(function () {
           $body = $('body');
 
           $input = $(this);
@@ -415,7 +432,7 @@ The above copyright notice and this permission notice shall be included in all c
 
             $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').addClass('sidebar-mini');
 
               md.misc.sidebar_mini_active = true;
@@ -423,25 +440,49 @@ The above copyright notice and this permission notice shall be included in all c
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
 
         });
       });
     });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
+    function consultar() {
 
-    });
+      var data = {
+        k_evento: $("#IdEvento :selected").val(),
+
+      }
+      console.log(JSON.stringify(data));
+      $.ajax({
+        url: 'http://localhost:8090/consultarInscripciones',
+        method: 'POST',
+        data: data,
+        success: function (obj) {
+          var tbody = document.getElementById('tbody');
+          var head=" <tr> <th>Id inscripcion</th> <th>Fecha inscripcion</th> <th>Valor de inscripcion</th><th>Estado inscripcion</th><th>Valor de inscripcion</th></tr>";
+          tbody.innerHTML += head;
+          for (var i = 0; i < obj.length; i++) {
+            var tr = "<tr>";
+
+
+            /* Must not forget the $ sign */
+            tr += "<td>" + obj[i].k_inscripcion.toString() + "</td><td>"+obj[i].f_inscripcion.toString()+"</td><td>"+obj[i].v_valor.toString()+"</td><td>"+obj[i].i_estado.toString()+"</td><td>"+obj[i].k_evento.toString()+"</td><td>"+obj[i].k_tipoa.toString()+"</td><td>"+obj[i].i_asiste.toString()+"</td><td>"+obj[i].k_numeroa.toString()+"</td></tr>";
+
+            /* We add the table row to the table body */
+            tbody.innerHTML += tr;
+          }
+        },
+        error: function (errorThrown) {
+          alert('error ' + JSON.stringify(errorThrown));
+        }
+      });
+    }
   </script>
 </body>
 
